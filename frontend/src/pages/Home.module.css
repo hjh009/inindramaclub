@@ -1,0 +1,50 @@
+.hero {
+  height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #aaa;
+  letter-spacing: 0.05em;
+}
+
+.intro {
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro p {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--gray);
+}
+
+.footer {
+  background: var(--black);
+  color: #666;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+}

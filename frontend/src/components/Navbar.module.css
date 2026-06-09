@@ -1,0 +1,43 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  height: var(--nav-height);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu a {
+  color: #aaa;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: var(--white);
+}
