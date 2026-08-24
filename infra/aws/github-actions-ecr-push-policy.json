@@ -20,8 +20,8 @@
         "ecr:CompleteLayerUpload"
       ],
       "Resource": [
-        "arn:aws:ecr:<AWS_REGION>:<AWS_ACCOUNT_ID>:repository/inindramaclub-backend",
-        "arn:aws:ecr:<AWS_REGION>:<AWS_ACCOUNT_ID>:repository/inindramaclub-frontend"
+        "arn:aws:ecr:ap-northeast-2:932459504567:repository/inindramaclub-backend",
+        "arn:aws:ecr:ap-northeast-2:932459504567:repository/inindramaclub-frontend"
       ]
     }
   ]
