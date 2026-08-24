@@ -1,21 +1,22 @@
 services:
   frontend:
-    build: ./frontend
+    image: ${ECR_REGISTRY}/inindramaclub-frontend:${IMAGE_TAG:-latest}
     ports:
-      - "8081:80"
+      - "80:80"
     depends_on:
       - backend
+    restart: on-failure
 
   backend:
-    build: ./backend
+    image: ${ECR_REGISTRY}/inindramaclub-backend:${IMAGE_TAG:-latest}
     ports:
       - "8080:8080"
     environment:
       DB_HOST: db
       DB_PORT: 5432
       DB_NAME: inindramaclub
-      DB_USER: ${DB_USER:-inin}
-      DB_PASSWORD: ${DB_PASSWORD:-inin1234}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - uploads:/uploads
     restart: on-failure
@@ -27,15 +28,16 @@ services:
     image: postgres:16-alpine
     environment:
       POSTGRES_DB: inindramaclub
-      POSTGRES_USER: ${DB_USER:-inin}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-inin1234}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-inin} -d inindramaclub"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d inindramaclub"]
       interval: 5s
       timeout: 5s
       retries: 10
+    restart: on-failure
 
 volumes:
   uploads:
